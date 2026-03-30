@@ -1,0 +1,99 @@
+# Gateway Configuration
+gw:
+  enabled: true
+  name: gateway
+  host: simplifycampaign-devapi2-web.fabulate.co
+
+# Orchestrator Service Configuration
+orchestrator:
+  image:
+    repository: fabulate-dev-simplifycampaign-orchestrator
+    pullPolicy: Always
+    tag: "latest"
+  replicaCount: 2
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    cpuUtilization: 70
+
+# Agent Service Configuration
+agent:
+  image:
+    repository: fabulate-dev-simplifycampaign-agent
+    pullPolicy: Always
+    tag: "latest"
+  replicaCount: 3
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    cpuUtilization: 70
+
+# Web UI Service Configuration
+web-ui:
+  image:
+    repository: fabulate-dev-simplifycampaign-web
+    pullPolicy: Always
+    tag: "latest"
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+    cpuUtilization: 70
+
+# Service Configuration
+service:
+  type: ClusterIP
+  ports:
+    orchestrator: 8080
+    agent: 8081
+    web-ui: 5001
+
+# Global Configuration
+global:
+  imageRegistry: ""
+  imagePullSecrets: []
+  storageClass: ""
+
+# Security Context
+securityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: false
+
+# Pod Security Context
+podSecurityContext:
+  fsGroup: 1000
+
+# Node Selector
+nodeSelector: {}
+
+# Tolerations
+tolerations: []
+
+# Affinity
+affinity: {}
