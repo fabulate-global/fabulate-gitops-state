@@ -11,7 +11,7 @@ orchestrator:
 agent:
   image:
     repository: fabulate-dev-simplifycampaign-agent
-    tag: "latest"
+    tag: "0.1.1"
 
 # Web UI Service Configuration
 web-ui:
