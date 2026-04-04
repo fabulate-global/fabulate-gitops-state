@@ -4,11 +4,12 @@ gw:
   
 # Orchestrator Service Configuration
 orchestrator:
-  image: fabulate-dev-simplifycampaign-orchestrator
+  image: "fabulate-dev-simplifycampaign-orchestrator:latest"
+  
 # Agent Service Configuration
 agent:
-  image: fabulate-dev-simplifycampaign-agent:0.1.2
-
+  image: "fabulate-dev-simplifycampaign-agent:latest"
+  
 # Web UI Service Configuration
 web-ui:
-  image: fabulate-dev-simplifycampaign-web:latest
+  image: "fabulate-dev-simplifycampaign-web:latest"
