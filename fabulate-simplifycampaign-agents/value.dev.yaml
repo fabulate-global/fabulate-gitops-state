@@ -1,20 +1,14 @@
 # Gateway Configuration
 gw:
   host: simplifycampaign-devapi2-web.fabulate.co
-
+  
 # Orchestrator Service Configuration
 orchestrator:
-  image:
-    repository: fabulate-dev-simplifycampaign-orchestrator
-    tag: "latest"
+  image: fabulate-dev-simplifycampaign-orchestrator
 # Agent Service Configuration
 agent:
-  image:
-    repository: fabulate-dev-simplifycampaign-agent
-    tag: "0.1.2"
+  image: fabulate-dev-simplifycampaign-agent:0.1.2
 
 # Web UI Service Configuration
 web-ui:
-  image:
-    repository: fabulate-dev-simplifycampaign-web
-    tag: "latest"
+  image: fabulate-dev-simplifycampaign-web:latest
